@@ -1,0 +1,14 @@
+.card {
+   display: flex;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   border-radius: 10px;
+   overflow: hidden;
+   transition: transform 0.3s;
+   width: 10em;
+   height: 15em;
+}
+
+.logo {
+   width: 100%;
+   background-color: #f1f1f1;
+}

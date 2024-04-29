@@ -1,11 +1,7 @@
+import Skills from "./components/Skills/Skills";
+
 function App() {
-   return (
-      <div className="App">
-         <header className="App-header">
-            <h1>Hello, World!</h1>
-         </header>
-      </div>
-   );
+   return <Skills />;
 }
 
 export default App;
