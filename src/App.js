@@ -1,7 +1,12 @@
 import Skills from "./components/Skills/Skills";
+import "./index.css";
 
 function App() {
-   return <Skills />;
+   return (
+      <>
+         <Skills />
+      </>
+   );
 }
 
 export default App;

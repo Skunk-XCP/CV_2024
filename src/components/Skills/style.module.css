@@ -1,56 +1,45 @@
-.section {
-   position: relative;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   padding: 20px;
-   height: 100vh;
-   background: linear-gradient(
-      150deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(29, 2, 57, 1) 55%,
-      rgba(8, 0, 112, 1) 100%
-   );
-}
-
-.section > h2 {
-   position: absolute;
-   top: 20px;
-   left: 80px;
-   color: white;
-   font-size: 2.5rem;
-   margin-bottom: 1em;
-}
-
-.swiper {
-   width: 100%;
-}
-
-.container {
-   max-width: 400px;
-   margin: 0 auto;
-   box-shadow: rgba(36, 235, 229, 0.377) 0px 8px 24px,
-      rgba(36, 235, 229, 0.377) 0px 16px 56px,
-      rgba(36, 235, 229, 0.377) 0px 24px 80px;
-   border-radius: 20px;
-}
-
-.swiper-slide {
-   background-position: center;
-   background-size: cover;
-   width: 300px;
-   height: 300px;
+.title {
+   font-size: 3.5rem;
+   font-weight: 700;
+   margin: 2rem 0 0 3rem;
 }
 
 .description {
    position: absolute;
-   bottom: 10%;
-   margin-top: 3em;
+   left: 50%;
+   bottom: 5%;
+   transform: translateX(-50%);
+   display: flex;
+   justify-content: center;
+   text-align: center;
    width: 30%;
 }
 
-.description > p {
-   color: white;
-   font-size: 1.5rem;
-   text-align: center;
+@media (max-width: 990px) {
+   .description {
+      width: 60%;
+      bottom: 20%;
+   }
+}
+
+@media (max-width: 500px) {
+   .title {
+      text-align: center;
+   }
+
+   .description {
+      width: 70%;
+      bottom: 15%;
+   }
+}
+
+@media (max-width: 450px) {
+   .title {
+      text-align: center;
+   }
+
+   .description {
+      width: 70%;
+      bottom: 15%;
+   }
 }

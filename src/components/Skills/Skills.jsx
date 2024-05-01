@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
+import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { EffectCoverflow, Pagination } from "swiper/modules";
+import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SkillsData from "../../data/skills.json";
 import SkillCard from "../SkillCard/SkillCard";
@@ -27,33 +28,45 @@ const Skills = () => {
    }, [activeIndex]);
 
    return (
-      <section className={s.section}>
-         <h2>Skillset</h2>
-         <div className={s.container}>
-            <Swiper
-               effect={"coverflow"}
-               grabCursor={true}
-               centeredSlides={true}
-               slidesPerView={"auto"}
-               loop={true}
-               onSlideChange={handleSlideChange}
-               coverflowEffect={{
-                  rotate: 50,
-                  stretch: 0,
-                  depth: 400,
-                  modifier: 1,
-                  slideShadows: true,
-               }}
-               pagination={true}
-               modules={[EffectCoverflow, Pagination]}
-            >
-               {SkillsData.map((skill) => (
-                  <SwiperSlide key={skill.id}>
-                     <SkillCard skill={skill} />
-                  </SwiperSlide>
-               ))}
-            </Swiper>
-         </div>
+      <section className={s.container}>
+         <h2 className={s.title}>Skillset</h2>
+         <Swiper
+            className="swiper_container"
+            effect={"coverflow"}
+            grabCursor={true}
+            centeredSlides={true}
+            slidesPerView={"auto"}
+            loop={true}
+            onSlideChange={handleSlideChange}
+            coverflowEffect={{
+               rotate: 0,
+               stretch: 0,
+               depth: 100,
+               modifier: 2.5,
+            }}
+            pagination={{ el: ".swiper-pagination", clickable: true }}
+            navigation={{
+               nextEl: ".swiper-button-next",
+               prevEl: ".swiper-button-prev",
+               clickable: true,
+            }}
+            modules={[EffectCoverflow, Pagination, Navigation]}
+         >
+            {SkillsData.map((skill) => (
+               <SwiperSlide key={skill.id}>
+                  <SkillCard skill={skill} />
+               </SwiperSlide>
+            ))}
+            <div className="slider-controler">
+               <div className="swiper-button-prev slider-arrow">
+                  <ion-icon name="arrow-back-outline"></ion-icon>
+               </div>
+               <div className="swiper-button-next slider-arrow">
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+               </div>
+               <div className="swiper-pagination"></div>
+            </div>
+         </Swiper>
 
          {currentText && (
             <div className={s.description}>
