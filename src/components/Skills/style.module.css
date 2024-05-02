@@ -1,35 +1,35 @@
+.container {
+   position: relative;
+   height: 100vh;
+}
+
 .title {
    font-size: 3.5rem;
    font-weight: 700;
-   margin: 2rem 0 0 3rem;
+   padding: 2rem 0 0 3rem;
+   color: white;
 }
 
 .description {
-   position: absolute;
-   left: 50%;
-   bottom: 5%;
-   transform: translateX(-50%);
+   width: 100%;
+   color: white;
    display: flex;
    justify-content: center;
    text-align: center;
-   width: 30%;
 }
 
-@media (max-width: 990px) {
-   .description {
-      width: 60%;
-      bottom: 20%;
-   }
+.description p {
+   width: 50%;
 }
 
 @media (max-width: 500px) {
    .title {
       text-align: center;
+      padding-left: 0;
    }
 
-   .description {
+   .description p {
       width: 70%;
-      bottom: 15%;
    }
 }
 
@@ -38,8 +38,7 @@
       text-align: center;
    }
 
-   .description {
+   .description p {
       width: 70%;
-      bottom: 15%;
    }
 }
