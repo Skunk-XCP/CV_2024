@@ -6,7 +6,9 @@ function Header() {
    const date = new Date();
    const hour = date.getHours();
    const minutes = date.getMinutes();
-   const time = `${hour}:${minutes}`;
+   const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+   const time = `${hour}:${formattedMinutes}`;
+
    const [hoveredTitleIndex, setHoveredTitleIndex] = useState(-1);
    const [hoveredSubtitleIndex, setHoveredSubtitleIndex] = useState(-1);
 
@@ -39,6 +41,7 @@ function Header() {
                               hoveredTitleIndex === index
                                  ? "translateY(-15px)"
                                  : "none",
+                           marginRight: letter === " " ? "20px" : "0",
                         }}
                      >
                         {letter}
@@ -55,6 +58,7 @@ function Header() {
                                  ? "translateY(15px) scaleY(-1)"
                                  : "scaleY(-1)",
                            opacity: 0.8,
+                           marginRight: letter === " " ? "20px" : "0",
                         }}
                      >
                         {letter}
@@ -74,6 +78,7 @@ function Header() {
                               hoveredSubtitleIndex === index
                                  ? "translateY(-15px)"
                                  : "none",
+                           marginRight: letter === " " ? "20px" : "0",
                         }}
                      >
                         {letter}
@@ -90,6 +95,7 @@ function Header() {
                                  ? "translateY(15px) scaleY(-1)"
                                  : "scaleY(-1)",
                            opacity: 0.8,
+                           marginRight: letter === " " ? "20px" : "0",
                         }}
                      >
                         {letter}
@@ -98,10 +104,15 @@ function Header() {
                </div>
             </div>
             <div className={s.header_infos}>
-               <p className={s.header_time}>Bordeaux, France - {time}</p>
-               <p className={s.header_work}>
-                  <span className={s.heaader_green_light}></span> Open to work
-               </p>
+               <div className={s.work_container}>
+                  <p className={s.header_work}>
+                     <span className={s.header_green_light}></span> Open to work
+                  </p>
+               </div>
+               <div className={s.container_time}>
+                  <p className={s.header_place}>Bordeaux, France</p>
+                  <p className={s.header_time}>{time}</p>
+               </div>
             </div>
          </section>
       </header>
