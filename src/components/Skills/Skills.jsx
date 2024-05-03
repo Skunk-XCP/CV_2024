@@ -28,7 +28,7 @@ const Skills = () => {
    }, [activeIndex]);
 
    return (
-      <section className={s.container}>
+      <section id="skillset" className={s.container}>
          <h2 className={s.title}>Skillset</h2>
          <Swiper
             className="swiper_container"

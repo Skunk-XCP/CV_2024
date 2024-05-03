@@ -3,14 +3,23 @@ import backgroundImg from "../../assets/images/bordeaux-place-bourse.jpeg";
 import s from "./style.module.css";
 
 function Header() {
-   const date = new Date();
-   const hour = date.getHours();
-   const minutes = date.getMinutes();
-   const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
-   const time = `${hour}:${formattedMinutes}`;
-
    const [hoveredTitleIndex, setHoveredTitleIndex] = useState(-1);
    const [hoveredSubtitleIndex, setHoveredSubtitleIndex] = useState(-1);
+
+   // Fonction pour mettre à jour l'heure
+   const updateTime = () => {
+      const date = new Date();
+      const hours = date.getHours();
+      const minutes = date.getMinutes();
+      return `${hours}:${minutes < 10 ? "0" + minutes : minutes}`;
+   };
+
+   const [time, setTime] = useState(updateTime());
+
+   // Mettre à jour l'heure toutes les secondes
+   setInterval(() => {
+      setTime(updateTime());
+   }, 1000);
 
    const headerStyle = {
       backgroundImage: `url(${backgroundImg})`,
@@ -28,7 +37,7 @@ function Header() {
 
    return (
       <header>
-         <section style={headerStyle} className={s.header_section}>
+         <section id="home" style={headerStyle} className={s.header_section}>
             <div className={s.title_container}>
                <h1 className={s.header_title}>
                   {letters.map((letter, index) => (
