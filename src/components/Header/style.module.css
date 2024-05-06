@@ -93,8 +93,10 @@
    background-color: rgb(33, 240, 33);
    width: 10px;
    height: 10px;
+   margin-right: 10px;
    border-radius: 50%;
    display: inline-block;
+   animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
@@ -139,4 +141,58 @@
    backdrop-filter: blur(8px);
    padding: 10px;
    border-radius: 10px;
+}
+
+@media (max-width: 1920px) {
+   .header_title,
+   .header_subtitle,
+   .title_reflection,
+   .subtitle_reflection {
+      font-size: 4.5rem;
+   }
+
+   .header_subtitle,
+   .subtitle_reflection {
+      font-size: 6.5rem;
+   }
+
+   .title_reflection {
+      transform: translateY(-28px);
+   }
+
+   .subtitle_reflection {
+      transform: translateY(-42px);
+   }
+}
+
+@media (max-width: 500px) {
+   .header_title,
+   .header_subtitle,
+   .title_reflection,
+   .subtitle_reflection {
+      font-size: 2.5rem;
+   }
+
+   .header_subtitle,
+   .subtitle_reflection {
+      font-size: 3.5rem;
+   }
+
+   .title_reflection {
+      transform: translateY(-15px);
+   }
+
+   .subtitle_reflection {
+      transform: translateY(-20px);
+   }
+
+   .header_infos {
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+   }
+
+   .container_time {
+      display: none;
+   }
 }

@@ -29,3 +29,78 @@
    text-decoration: none;
    color: white;
 }
+
+@media (max-width: 1920px) {
+   .navbar {
+      bottom: 2rem;
+   }
+}
+
+@media only screen and (max-width: 500px) {
+   .navbar {
+      bottom: unset;
+      top: 0;
+      background-color: transparent;
+      justify-content: flex-end;
+      padding: 1rem;
+   }
+
+   .navbar ul {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 100%;
+      border-radius: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      transition: width 0.5s ease;
+      visibility: hidden;
+   }
+
+   .navbar ul.active {
+      width: 100%;
+      visibility: visible;
+      transform: translateX(0);
+   }
+
+   .navbar ul li {
+      margin: 1rem 0;
+   }
+
+   .navbar ul li a {
+      color: white;
+   }
+
+   .menu_burger {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      cursor: pointer;
+      z-index: 1001;
+   }
+
+   .menu_burger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 5px;
+      transition: all 0.3s ease;
+   }
+
+   .menu_burger.active div:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+   }
+
+   .menu_burger.active div:nth-child(2) {
+      opacity: 0;
+   }
+
+   .menu_burger.active div:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+   }
+}
