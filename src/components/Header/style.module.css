@@ -145,9 +145,7 @@
 
 @media (max-width: 1920px) {
    .header_title,
-   .header_subtitle,
-   .title_reflection,
-   .subtitle_reflection {
+   .title_reflection {
       font-size: 4.5rem;
    }
 
@@ -165,25 +163,67 @@
    }
 }
 
-@media (max-width: 500px) {
-   .header_title,
-   .header_subtitle,
-   .title_reflection,
-   .subtitle_reflection {
-      font-size: 2.5rem;
+@media only screen and (min-width: 876px) and (max-width: 1024px) {
+   .header_section {
+      height: 100vh;
+   }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 875px) {
+   .header_section {
+      height: 100vh;
    }
 
-   .header_subtitle,
-   .subtitle_reflection {
+   .header_title,
+   .title_reflection {
       font-size: 3.5rem;
    }
 
    .title_reflection {
-      transform: translateY(-15px);
+      transform: translateY(-20px);
+   }
+
+   .header_subtitle,
+   .subtitle_reflection {
+      font-size: 4rem;
    }
 
    .subtitle_reflection {
-      transform: translateY(-20px);
+      transform: translateY(-24px);
+   }
+
+   .header_infos {
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+   }
+}
+
+@media (max-width: 575px) {
+   .header_section {
+      height: 100vh;
+   }
+
+   .title_container {
+      top: 55%;
+   }
+
+   .header_title,
+   .title_reflection {
+      font-size: 3.2rem;
+   }
+
+   .title_reflection {
+      transform: translateY(-18px);
+   }
+
+   .header_subtitle,
+   .subtitle_reflection {
+      font-size: 3.6rem;
+   }
+
+   .subtitle_reflection {
+      transform: translateY(-22px);
    }
 
    .header_infos {
@@ -194,5 +234,40 @@
 
    .container_time {
       display: none;
+   }
+}
+
+@media (max-width: 500px) {
+   .title_container {
+      top: 55%;
+   }
+
+   .header_title,
+   .title_reflection {
+      font-size: 3rem;
+   }
+
+   .header_subtitle,
+   .subtitle_reflection {
+      font-size: 3.5rem;
+   }
+
+   .title_reflection {
+      transform: translateY(-18px);
+   }
+
+   .subtitle_reflection {
+      transform: translateY(-20px);
+   }
+}
+
+@media (max-width: 450px) {
+   .header_subtitle,
+   .subtitle_reflection {
+      font-size: 3rem;
+   }
+
+   .subtitle_reflection {
+      transform: translateY(-18px);
    }
 }

@@ -8,7 +8,6 @@ function Navbar() {
       setIsActive(!isActive);
    };
 
-   // Fonction pour fermer le menu quand un lien est cliqué
    const closeMenu = () => {
       setIsActive(false);
    };
