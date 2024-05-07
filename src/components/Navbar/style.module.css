@@ -21,7 +21,7 @@
 }
 
 .navbar ul li {
-   font-size: 1.2rem;
+   font-size: 1.8rem;
    cursor: pointer;
 }
 
@@ -30,19 +30,15 @@
    color: white;
 }
 
-@media (max-width: 1920px) {
-   .navbar {
-      bottom: 2rem;
+@media only screen and (min-width: 1024px) and (max-width: 1300px) {
+   .navbar ul {
+      width: 45%;
    }
 }
 
-@media only screen and (min-width: 575px) and (max-width: 875px) {
-   .navbar {
-      bottom: 5rem;
-   }
-
+@media only screen and (min-width: 575px) and (max-width: 1024px) {
    .navbar ul {
-      width: 45%;
+      width: 55%;
    }
 }
 
@@ -89,8 +85,8 @@
 
    .menu_burger {
       position: fixed;
-      top: 2rem;
-      right: 2rem;
+      top: 3.5rem;
+      right: 2.5rem;
       cursor: pointer;
       z-index: 1001;
    }

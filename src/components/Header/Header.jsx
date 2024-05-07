@@ -38,80 +38,61 @@ function Header() {
    return (
       <header>
          <section id="home" style={headerStyle} className={s.header_section}>
-            <div className={s.title_container}>
-               <h1 className={s.header_title}>
-                  {letters.map((letter, index) => (
+            <h1 className={s.header_title}>
+               {letters.map((letter, index) => (
+                  <div
+                     className={s.title_letter}
+                     key={index}
+                     onMouseEnter={() => setHoveredTitleIndex(index)}
+                     onMouseLeave={() => setHoveredTitleIndex(-1)}
+                     style={{
+                        transform:
+                           hoveredTitleIndex === index
+                              ? "translateY(-15px)"
+                              : "none",
+                        marginRight: letter === " " ? "20px" : "0",
+                     }}
+                  >
+                     <span className={s.letter}>{letter}</span>
                      <span
-                        key={index}
-                        onMouseEnter={() => setHoveredTitleIndex(index)}
-                        onMouseLeave={() => setHoveredTitleIndex(-1)}
-                        style={{
-                           transform:
-                              hoveredTitleIndex === index
-                                 ? "translateY(-15px)"
-                                 : "none",
-                           marginRight: letter === " " ? "20px" : "0",
-                        }}
+                        className={`${s.title_reflection} ${
+                           hoveredTitleIndex === index ? s.reflectedHover : ""
+                        }`}
                      >
                         {letter}
                      </span>
-                  ))}
-               </h1>
-               <p className={s.title_reflection}>
-                  {letters.map((letter, index) => (
+                  </div>
+               ))}
+            </h1>
+            <h2 className={s.header_subtitle}>
+               {subLetters.map((letter, index) => (
+                  <div
+                     className={s.subtitle_letter}
+                     key={index}
+                     onMouseEnter={() => setHoveredSubtitleIndex(index)}
+                     onMouseLeave={() => setHoveredSubtitleIndex(-1)}
+                     style={{
+                        transform:
+                           hoveredSubtitleIndex === index
+                              ? "translateY(-15px)"
+                              : "none",
+                        marginRight: letter === " " ? "20px" : "0",
+                     }}
+                  >
+                     <span className={s.letter}>{letter}</span>
                      <span
-                        key={index}
-                        style={{
-                           transform:
-                              hoveredTitleIndex === index
-                                 ? "translateY(15px) scaleY(-1)"
-                                 : "scaleY(-1)",
-                           opacity: 0.8,
-                           marginRight: letter === " " ? "20px" : "0",
-                        }}
+                        className={`${s.subtitle_reflection} ${
+                           hoveredSubtitleIndex === index
+                              ? s.reflectedHover
+                              : ""
+                        }`}
                      >
                         {letter}
                      </span>
-                  ))}
-               </p>
-            </div>
-            <div className={s.subtitle_container}>
-               <p className={s.header_subtitle}>
-                  {subLetters.map((letter, index) => (
-                     <span
-                        key={index}
-                        onMouseEnter={() => setHoveredSubtitleIndex(index)}
-                        onMouseLeave={() => setHoveredSubtitleIndex(-1)}
-                        style={{
-                           transform:
-                              hoveredSubtitleIndex === index
-                                 ? "translateY(-15px)"
-                                 : "none",
-                           marginRight: letter === " " ? "20px" : "0",
-                        }}
-                     >
-                        {letter}
-                     </span>
-                  ))}
-               </p>
-               <div className={s.subtitle_reflection}>
-                  {subLetters.map((letter, index) => (
-                     <span
-                        key={index}
-                        style={{
-                           transform:
-                              hoveredSubtitleIndex === index
-                                 ? "translateY(15px) scaleY(-1)"
-                                 : "scaleY(-1)",
-                           opacity: 0.8,
-                           marginRight: letter === " " ? "20px" : "0",
-                        }}
-                     >
-                        {letter}
-                     </span>
-                  ))}
-               </div>
-            </div>
+                  </div>
+               ))}
+            </h2>
+
             <div className={s.header_infos}>
                <div className={s.work_container}>
                   <p className={s.header_work}>

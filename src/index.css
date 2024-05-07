@@ -151,24 +151,6 @@ body {
    z-index: 20;
 }
 
-@media (min-width: 1440px) {
-   html {
-      zoom: 1.5;
-   }
-}
-
-@media (min-width: 2560px) {
-   html {
-      zoom: 1.7;
-   }
-}
-
-@media (min-width: 3860px) {
-   html {
-      zoom: 2.5;
-   }
-}
-
 @media (max-width: 500px) {
    .swiper_container {
       height: 47rem;
