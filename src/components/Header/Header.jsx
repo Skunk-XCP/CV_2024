@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import backgroundImg from "../../assets/images/bordeaux-place-bourse.jpeg";
 import s from "./style.module.css";
 
-function Header() {
+function Header({ style }) {
    const [hoveredTitleIndex, setHoveredTitleIndex] = useState(-1);
    const [hoveredSubtitleIndex, setHoveredSubtitleIndex] = useState(-1);
 
@@ -21,14 +20,6 @@ function Header() {
       setTime(updateTime());
    }, 1000);
 
-   const headerStyle = {
-      backgroundImage: `url(${backgroundImg})`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-      position: "relative",
-   };
-
    const headerTitle = "Donatien Rouzeirol";
    const letters = headerTitle.split("");
 
@@ -36,8 +27,8 @@ function Header() {
    const subLetters = headerSubitle.split("");
 
    return (
-      <header>
-         <section id="home" style={headerStyle} className={s.header_section}>
+      <header style={style}>
+         <section id="home" className={s.header_section}>
             <h1 className={s.header_title}>
                {letters.map((letter, index) => (
                   <div

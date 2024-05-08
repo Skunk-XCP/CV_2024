@@ -9,7 +9,7 @@ import SkillsData from "../../data/skills.json";
 import SkillCard from "../SkillCard/SkillCard";
 import s from "./style.module.css";
 
-const Skills = () => {
+const Skills = ({ style }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const [currentText, setCurrentText] = useState("");
 
@@ -28,7 +28,7 @@ const Skills = () => {
    }, [activeIndex]);
 
    return (
-      <section id="skillset" className={s.container}>
+      <section id="skillset" style={style} className={s.container}>
          <h2 className={s.title}>Skillset</h2>
          <Swiper
             className="swiper_container"
