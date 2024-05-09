@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import s from "./style.module.css";
 
-function Header({ style }) {
+function Header() {
    const [hoveredTitleIndex, setHoveredTitleIndex] = useState(-1);
    const [hoveredSubtitleIndex, setHoveredSubtitleIndex] = useState(-1);
 
@@ -26,8 +26,25 @@ function Header({ style }) {
    const headerSubitle = "Développeur Frontend";
    const subLetters = headerSubitle.split("");
 
+   const [scale, setScale] = useState(1);
+   useEffect(() => {
+      const handleScroll = () => {
+         // Calcule la mise à l'échelle en fonction de la position de défilement
+         const newScale = Math.max(0.95, 1 - window.scrollY / 5000);
+         setScale(newScale);
+      };
+
+      // Ajoute un gestionnaire pour l'événement de défilement
+      window.addEventListener("scroll", handleScroll);
+
+      // Fonction de nettoyage pour retirer le gestionnaire d'événements
+      return () => {
+         window.removeEventListener("scroll", handleScroll);
+      };
+   }, []);
+
    return (
-      <header style={style}>
+      <header className={s.header} style={{ transform: `scale(${scale})` }}>
          <section id="home" className={s.header_section}>
             <h1 className={s.header_title}>
                {letters.map((letter, index) => (

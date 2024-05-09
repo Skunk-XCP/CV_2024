@@ -1,0 +1,15 @@
+.section {
+   position: relative;
+   height: 100vh;
+   background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(12, 25, 85, 1) 76%,
+      rgba(0, 22, 116, 1) 100%
+   );
+   z-index: 2;
+}
+
+.title {
+   color: #fff;
+}

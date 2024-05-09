@@ -26,7 +26,11 @@ function Navbar() {
                </a>
             </li>
             <li>none 1</li>
-            <li>none 2</li>
+            <li>
+               <a href="#contact" onClick={closeMenu}>
+                  Contact
+               </a>
+            </li>
          </ul>
          <div
             className={`${s.menu_burger} ${isActive ? s.active : ""}`}
