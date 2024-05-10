@@ -45,7 +45,7 @@ function Header() {
 
    return (
       <header className={s.header} style={{ transform: `scale(${scale})` }}>
-         <section id="home" className={s.header_section}>
+         <section className={s.header_section}>
             <h1 className={s.header_title}>
                {letters.map((letter, index) => (
                   <div

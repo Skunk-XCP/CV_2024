@@ -9,7 +9,7 @@ import SkillsData from "../../data/skills.json";
 import SkillCard from "../SkillCard/SkillCard";
 import s from "./style.module.css";
 
-const Skills = () => {
+const SkillSet = () => {
    const [activeIndex, setActiveIndex] = useState(0);
    const [currentText, setCurrentText] = useState("");
 
@@ -77,4 +77,4 @@ const Skills = () => {
    );
 };
 
-export default Skills;
+export default SkillSet;

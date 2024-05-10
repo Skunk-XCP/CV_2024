@@ -1,15 +1,48 @@
 .section {
    position: relative;
    height: 100vh;
-   background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(12, 25, 85, 1) 76%,
-      rgba(0, 22, 116, 1) 100%
-   );
-   z-index: 2;
+   background-color: black;
+   z-index: 3;
 }
 
 .title {
    color: #fff;
+   font-size: 3.5rem;
+}
+
+.email {
+   color: #fff;
+   text-decoration: none;
+}
+
+.social_media_container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 90%;
+   gap: 40px;
+}
+
+.social_media_card {
+   border: 1px solid white;
+   border-radius: 15px;
+   width: 25rem;
+   height: 25rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+   transition: all 0.5s ease-in-out;
+}
+
+.social_media_card img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   padding: 20px;
+}
+
+.social_media_card:hover {
+   transform: scale(1.1) !important;
+   box-shadow: 0 0 20px 4px rgba(255, 255, 255, 0.6);
 }

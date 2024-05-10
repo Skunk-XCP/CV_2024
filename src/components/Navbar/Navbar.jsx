@@ -16,16 +16,15 @@ function Navbar() {
       <nav className={s.navbar}>
          <ul className={isActive ? s.active : ""}>
             <li>
-               <a href="#home" onClick={closeMenu}>
-                  Accueil
-               </a>
-            </li>
-            <li>
                <a href="#skillset" onClick={closeMenu}>
                   SkillSet
                </a>
             </li>
-            <li>none 1</li>
+            <li>
+               <a href="#experience" onClick={closeMenu}>
+                  Experience
+               </a>
+            </li>
             <li>
                <a href="#contact" onClick={closeMenu}>
                   Contact

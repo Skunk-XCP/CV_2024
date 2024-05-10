@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Contact from "./components/Contact/Contact";
+import Experience from "./components/Experience/Experience";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
-import Skills from "./components/Skills/Skills";
+import SkillSet from "./components/SkillSet/SkillSet";
 import "./index.css";
 
 function App() {
@@ -24,9 +25,10 @@ function App() {
 
    return (
       <>
-         <Header scrollY={scrollY} />
-         <Skills scrollY={scrollY} />
          <Navbar />
+         <Header scrollY={scrollY} />
+         <SkillSet scrollY={scrollY} />
+         <Experience />
          <Contact />
       </>
    );

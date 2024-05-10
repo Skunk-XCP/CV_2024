@@ -40,10 +40,6 @@ html {
    background: transparent;
 }
 
-body {
-   font-size: 1.6rem;
-}
-
 .container {
    position: relative;
    max-width: 124rem;
