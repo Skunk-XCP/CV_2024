@@ -1,5 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import logoX from "../../assets/logos/X_logo_2023.svg";
 import logoGithub from "../../assets/logos/github-mark-white.svg";
 import logoLinkedin from "../../assets/logos/linkedin.svg";
@@ -8,10 +8,16 @@ import s from "./style.module.css";
 function Contact() {
    const controls = useAnimation();
    const rootRef = useRef();
+   const [animationPlayed, setAnimationPlayed] = useState(false); // Nouvel état pour suivre si l'animation a été jouée
 
    const socialMedia = [
       { id: 1, name: "X", logo: logoX, url: "https://twitter.com/Donatien__R" },
-      { id: 2, name: "Github", logo: logoGithub, url: "" },
+      {
+         id: 2,
+         name: "Github",
+         logo: logoGithub,
+         url: "https://github.com/Skunk-XCP",
+      },
       {
          id: 3,
          name: "Linkedin",
@@ -24,19 +30,18 @@ function Contact() {
       const currentRef = rootRef.current;
       const observer = new IntersectionObserver(
          (entries) => {
-            // Pour chaque entrée, vérifie si l'élément est visible
             entries.forEach((entry) => {
-               if (entry.isIntersecting) {
-                  // Anime les éléments seulement quand ils entrent dans le viewport
+               if (entry.isIntersecting && !animationPlayed) {
                   controls.start((i) => ({
                      scale: [0.3, 1],
                      opacity: 1,
                      transition: { duration: 0.5, delay: i * 0.2 },
                   }));
+                  setAnimationPlayed(true);
                }
             });
          },
-         { threshold: 0.5 } // Déclenche l'animation lorsque 50% de l'élément est visible
+         { threshold: 0.5 }
       );
 
       if (rootRef.current) {
@@ -44,12 +49,11 @@ function Contact() {
       }
 
       return () => {
-         // Nettoyage de l'observer
          if (currentRef) {
             observer.unobserve(currentRef);
          }
       };
-   }, [controls]);
+   }, [controls, animationPlayed]);
 
    return (
       <section ref={rootRef} id="contact" className={s.section}>
