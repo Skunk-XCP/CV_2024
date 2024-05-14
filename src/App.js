@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Contact from "./components/Contact/Contact";
-import Formation from "./components/Formation/Formation";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import SkillSet from "./components/SkillSet/SkillSet";
+import Training from "./components/Training/Training";
 import "./index.css";
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
          <Navbar />
          <Header scrollY={scrollY} />
          <SkillSet scrollY={scrollY} />
-         <Formation />
+         <Training />
          <Contact />
       </>
    );

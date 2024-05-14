@@ -21,7 +21,8 @@
 .trainingTitle,
 .trainingDate,
 .trainingDescription,
-.trainingCertificate {
+.trainingCertificate,
+.chevron {
    color: #fff;
 }
 
@@ -58,6 +59,18 @@
 
 .trainingTitle:hover::after {
    width: 100%;
+}
+
+.chevron {
+   display: inline-block;
+   margin-left: 2rem;
+   transition: transform 0.3s ease;
+   font-size: 3rem;
+}
+
+.chevronDown {
+   transform: rotate(90deg);
+   font-size: 2rem;
 }
 
 .trainingDate,

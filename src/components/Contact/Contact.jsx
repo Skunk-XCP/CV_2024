@@ -62,8 +62,8 @@ function Contact() {
          </div>
 
          <div className={s.mail_container}>
-            <a className={s.email} href="donatienr@hotmail.fr">
-               donatienr@hotmail.fr
+            <a className={s.email} href="donatien.rouzeirol@gmail.com">
+               donatien.rouzeirol@gmail.com
             </a>
          </div>
 

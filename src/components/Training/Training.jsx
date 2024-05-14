@@ -1,7 +1,7 @@
 import { useState } from "react";
 import s from "./style.module.css";
 
-function Formation() {
+function Training() {
    const training = [
       {
          title: "Développeur Frontend JavaScript React - OpenClassrooms",
@@ -46,6 +46,13 @@ function Formation() {
                   onClick={() => handleClick(index)}
                >
                   {item.title}
+                  <span
+                     className={`${s.chevron} ${
+                        visibleIndices[index] ? s.chevronDown : ""
+                     }`}
+                  >
+                     &gt;
+                  </span>
                </h4>
                <div
                   className={`${s.trainingContainer} ${
@@ -62,4 +69,4 @@ function Formation() {
    );
 }
 
-export default Formation;
+export default Training;
