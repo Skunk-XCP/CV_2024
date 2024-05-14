@@ -21,8 +21,8 @@ function Navbar() {
                </a>
             </li>
             <li>
-               <a href="#experience" onClick={closeMenu}>
-                  Experience
+               <a href="#training" onClick={closeMenu}>
+                  Formation
                </a>
             </li>
             <li>

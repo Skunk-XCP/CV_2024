@@ -1,0 +1,195 @@
+.container {
+   position: relative;
+   height: 100vh;
+   background-color: black;
+   z-index: 3;
+}
+
+.title {
+   color: #fff;
+   font-size: 3.5rem;
+   font-family: "NimbusBold", sans-serif;
+   margin-left: 5rem;
+   padding-top: 2rem;
+}
+
+.training {
+   margin-top: 8rem;
+   margin-left: 5rem;
+}
+
+.trainingTitle,
+.trainingDate,
+.trainingDescription,
+.trainingCertificate {
+   color: #fff;
+}
+
+.trainingTitle {
+   cursor: pointer;
+   position: relative;
+   font-size: 2.5rem;
+   font-family: "NimbusBold", sans-serif;
+   width: 96%;
+}
+
+.trainingTitle::after {
+   content: "";
+   display: block;
+   width: 0;
+   height: 2px;
+   background: black;
+   transition: width 0.3s;
+}
+
+.trainingTitle:hover::after,
+.trainingTitle.active::after {
+   width: 100%;
+}
+
+.trainingTitle::after {
+   content: "";
+   display: block;
+   width: 0;
+   height: 2px;
+   background: white;
+   transition: width 0.3s;
+}
+
+.trainingTitle:hover::after {
+   width: 100%;
+}
+
+.trainingDate,
+.trainingDescription,
+.trainingCertificate {
+   font-size: 2rem;
+}
+
+.trainingDate {
+   font-style: italic;
+   margin-top: 1rem;
+}
+
+.trainingContainer {
+   max-height: 0;
+   overflow: hidden;
+   transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+   opacity: 0;
+}
+
+.trainingContainer.visible {
+   max-height: 250px;
+   opacity: 1;
+}
+
+.trainingDescription {
+   margin-top: 3rem;
+   width: 90%;
+   text-align: justify;
+}
+
+.trainingCertificate {
+   margin-top: 3rem;
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1180px) {
+   .training {
+      margin-top: 5rem;
+   }
+
+   .trainingTitle {
+      width: 94%;
+   }
+
+   .trainingDescription {
+      width: 94%;
+      margin-top: 2.5rem;
+   }
+
+   .trainingDate,
+   .trainingCertificate {
+      font-size: 1.5rem;
+   }
+
+   .trainingCertificate {
+      margin-top: 1.5rem;
+   }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+   .training {
+      margin-top: 3rem;
+   }
+
+   .trainingTitle {
+      width: 92%;
+   }
+
+   .trainingDate,
+   .trainingDescription,
+   .trainingCertificate {
+      font-size: 1.8rem;
+   }
+
+   .trainingDescription {
+      width: 92%;
+      margin-top: 2rem;
+   }
+
+   .trainingDate,
+   .trainingCertificate {
+      font-size: 1.5rem;
+   }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+   .training {
+      margin-top: 2.5rem;
+   }
+
+   .trainingTitle {
+      font-size: 2rem;
+      width: 90%;
+   }
+
+   .trainingDescription {
+      width: 90%;
+      margin-top: 1.5rem;
+   }
+
+   .trainingContainer.visible {
+      overflow-y: auto;
+   }
+
+   .trainingDate,
+   .trainingCertificate {
+      font-size: 1.5rem;
+   }
+}
+
+@media only screen and (min-width: 383px) and (max-width: 480px) {
+   .training {
+      margin-top: 2.5rem;
+   }
+
+   .trainingTitle {
+      font-size: 1.8rem;
+      width: 86%;
+   }
+
+   .trainingDescription {
+      width: 86%;
+      margin-top: 1.5rem;
+      font-size: 1.5rem;
+   }
+
+   .trainingContainer.visible {
+      overflow-y: auto;
+   }
+
+   .trainingDate,
+   .trainingCertificate {
+      font-size: 1.5rem;
+   }
+}
