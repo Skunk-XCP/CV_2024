@@ -166,6 +166,14 @@
       width: 90%;
    }
 
+   .chevron {
+      font-size: 2.5rem;
+   }
+
+   .chevronDown {
+      font-size: 1.5rem;
+   }
+
    .trainingDescription {
       width: 90%;
       margin-top: 1.5rem;
@@ -189,6 +197,14 @@
    .trainingTitle {
       font-size: 1.8rem;
       width: 86%;
+   }
+
+   .chevron {
+      font-size: 2rem;
+   }
+
+   .chevronDown {
+      font-size: 1.5rem;
    }
 
    .trainingDescription {
