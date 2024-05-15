@@ -27,13 +27,11 @@
 
 .card {
    border-radius: 8px;
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
    margin: 20px auto;
    width: 95%;
    height: 280px;
    overflow: hidden;
    position: relative;
-   cursor: pointer;
 }
 
 .cardTitle,
@@ -47,6 +45,7 @@
    align-items: center;
    justify-content: center;
    transition: opacity 0.5s ease;
+   cursor: pointer;
 }
 
 .cardTitle {
