@@ -5,7 +5,7 @@ function Training() {
    const training = [
       {
          title: "Développeur Frontend JavaScript React - OpenClassrooms",
-         date: "2023 - 2024 (1 an)",
+         date: "Février 2023 - Février 2024",
          description:
             "Grâce à la formation en ligne, j'ai appris à développer des applications web de manière autonome. J'ai réalisé une dizaine de projets au cours de cette formation, sous la supervision d'un mentor que je voyais 1 fois par semaine pour une durée de 45 minutes. J'ai acquis des compétences en HTML, CSS, JavaScript, React, Redux, Node.js, MongoDB, Git, GitHub, Webpack, Babel, ESLint, Jest. Chaque projet a été validé par un examen de soutenance.",
          certificate:
@@ -38,24 +38,16 @@ function Training() {
          <h3 className={s.title}>Formation</h3>
 
          {training.map((item, index) => (
-            <div key={index} className={s.training}>
-               <h4
-                  className={`${s.trainingTitle} ${
-                     visibleIndices[index] ? s.active : ""
-                  }`}
-                  onClick={() => handleClick(index)}
-               >
-                  {item.title}
-                  <span
-                     className={`${s.chevron} ${
-                        visibleIndices[index] ? s.chevronDown : ""
-                     }`}
-                  >
-                     &gt;
-                  </span>
-               </h4>
+            <div
+               key={index}
+               className={`${s.card} ${
+                  visibleIndices[index] ? s.swipeLeft : s.swipeRight
+               }`}
+               onClick={() => handleClick(index)}
+            >
+               <h4 className={s.cardTitle}>{item.title}</h4>
                <div
-                  className={`${s.trainingContainer} ${
+                  className={`${s.cardBody} ${
                      visibleIndices[index] ? s.visible : ""
                   }`}
                >

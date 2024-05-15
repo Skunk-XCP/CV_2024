@@ -9,68 +9,66 @@
    color: #fff;
    font-size: 3.5rem;
    font-family: "NimbusBold", sans-serif;
-   margin-left: 5rem;
-   padding-top: 2rem;
+   margin: 0 0 10rem 5rem;
+   padding: 2rem 0;
 }
 
-.training {
-   margin-top: 8rem;
-   margin-left: 5rem;
-}
-
-.trainingTitle,
+.cardTitle,
 .trainingDate,
 .trainingDescription,
-.trainingCertificate,
-.chevron {
+.trainingCertificate {
    color: #fff;
 }
 
-.trainingTitle {
-   cursor: pointer;
+.trainingDate,
+.trainingDescription {
+   margin-bottom: 1.5rem;
+}
+
+.card {
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   margin: 20px auto;
+   width: 95%;
+   height: 280px;
+   overflow: hidden;
    position: relative;
+   cursor: pointer;
+}
+
+.cardTitle,
+.cardBody {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: opacity 0.5s ease;
+}
+
+.cardTitle {
+   background-color: #000000;
+   padding: 20px;
    font-size: 2.5rem;
+   text-align: center;
    font-family: "NimbusBold", sans-serif;
-   width: 96%;
+   z-index: 2;
+   border-bottom: rgba(191, 191, 191, 0.068) solid 2px;
 }
 
-.trainingTitle::after {
-   content: "";
-   display: block;
-   width: 0;
-   height: 2px;
-   background: black;
-   transition: width 0.3s;
-}
-
-.trainingTitle:hover::after,
-.trainingTitle.active::after {
-   width: 100%;
-}
-
-.trainingTitle::after {
-   content: "";
-   display: block;
-   width: 0;
-   height: 2px;
-   background: white;
-   transition: width 0.3s;
-}
-
-.trainingTitle:hover::after {
-   width: 100%;
-}
-
-.chevron {
-   display: inline-block;
-   margin-left: 2rem;
-   transition: transform 0.3s ease;
-   font-size: 3rem;
-}
-
-.chevronDown {
-   transform: rotate(90deg);
-   font-size: 2rem;
+.cardBody {
+   display: flex;
+   justify-content: space-evenly;
+   flex-direction: column;
+   background-color: #000000;
+   padding: 20px;
+   text-align: center;
+   opacity: 0;
+   z-index: 1;
+   border-bottom: rgba(191, 191, 191, 0.068) solid 2px;
 }
 
 .trainingDate,
@@ -79,64 +77,68 @@
    font-size: 2rem;
 }
 
-.trainingDate {
-   font-style: italic;
-   margin-top: 1rem;
+.trainingDescription {
+   text-align: justify;
+   width: 70%;
 }
 
-.trainingContainer {
-   max-height: 0;
-   overflow: hidden;
-   transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+.card::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: #000000; /* Couleur de balayage */
+   z-index: 3;
+   transform: translateX(-100%);
+   transition: transform 0.5s ease;
+   border-bottom: rgba(191, 191, 191, 0.068) solid 2px;
+}
+
+.card.swipeLeft::before {
+   transform: translateX(100%);
+}
+
+.card.swipeRight::before {
+   transform: translateX(-100%);
+}
+
+.card.swipeLeft .cardTitle {
    opacity: 0;
 }
 
-.trainingContainer.visible {
-   max-height: 250px;
+.card.swipeLeft .cardBody {
    opacity: 1;
 }
 
-.trainingDescription {
-   margin-top: 3rem;
-   width: 90%;
-   text-align: justify;
+.card.swipeRight .cardTitle {
+   opacity: 1;
 }
 
-.trainingCertificate {
-   margin-top: 3rem;
+.card.swipeRight .cardBody {
+   opacity: 0;
 }
 
-@media only screen and (min-width: 1024px) and (max-width: 1180px) {
-   .training {
-      margin-top: 5rem;
-   }
-
-   .trainingTitle {
-      width: 94%;
+@media only screen and (min-width: 1024px) and (max-width: 1080px) {
+   .title {
+      margin: 0 0 4rem 5rem;
+      padding: 2rem 0;
    }
 
    .trainingDescription {
-      width: 94%;
-      margin-top: 2.5rem;
-   }
-
-   .trainingDate,
-   .trainingCertificate {
-      font-size: 1.5rem;
-   }
-
-   .trainingCertificate {
-      margin-top: 1.5rem;
+      width: 80%;
    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-   .training {
-      margin-top: 3rem;
+   .title {
+      margin: 0 0 2rem 5rem;
+      padding: 2rem 0;
    }
 
-   .trainingTitle {
-      width: 92%;
+   .trainingDescription {
+      width: 80%;
    }
 
    .trainingDate,
@@ -144,81 +146,48 @@
    .trainingCertificate {
       font-size: 1.8rem;
    }
-
-   .trainingDescription {
-      width: 92%;
-      margin-top: 2rem;
-   }
-
-   .trainingDate,
-   .trainingCertificate {
-      font-size: 1.5rem;
-   }
 }
 
 @media only screen and (min-width: 481px) and (max-width: 767px) {
-   .training {
-      margin-top: 2.5rem;
-   }
-
-   .trainingTitle {
-      font-size: 2rem;
-      width: 90%;
-   }
-
-   .chevron {
-      font-size: 2.5rem;
-   }
-
-   .chevronDown {
-      font-size: 1.5rem;
+   .title {
+      text-align: center;
+      margin: 0 0 2rem 0;
+      padding: 2rem 0;
    }
 
    .trainingDescription {
-      width: 90%;
-      margin-top: 1.5rem;
-   }
-
-   .trainingContainer.visible {
-      overflow-y: auto;
+      width: 95%;
    }
 
    .trainingDate,
+   .trainingDescription,
    .trainingCertificate {
       font-size: 1.5rem;
+   }
+
+   .card {
+      height: 300px;
    }
 }
 
 @media only screen and (min-width: 383px) and (max-width: 480px) {
-   .training {
-      margin-top: 2.5rem;
-   }
-
-   .trainingTitle {
-      font-size: 1.8rem;
-      width: 86%;
-   }
-
-   .chevron {
-      font-size: 2rem;
-   }
-
-   .chevronDown {
-      font-size: 1.5rem;
+   .title {
+      text-align: center;
+      margin: 0 0 2rem 0;
+      padding: 2rem 0 0 0;
    }
 
    .trainingDescription {
-      width: 86%;
-      margin-top: 1.5rem;
-      font-size: 1.5rem;
-   }
-
-   .trainingContainer.visible {
-      overflow-y: auto;
+      width: 90%;
    }
 
    .trainingDate,
+   .trainingDescription,
    .trainingCertificate {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
+   }
+
+   .card {
+      height: 320px;
    }
 }
