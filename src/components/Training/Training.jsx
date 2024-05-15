@@ -43,9 +43,16 @@ function Training() {
                className={`${s.card} ${
                   visibleIndices[index] ? s.swipeLeft : s.swipeRight
                }`}
-               onClick={() => handleClick(index)}
             >
-               <h4 className={s.cardTitle}>{item.title}</h4>
+               <button
+                  className={s.cardButton}
+                  onClick={() => handleClick(index)}
+                  aria-labelledby={`title-${index}`}
+               >
+                  <h4 id={`title-${index}`} className={s.cardTitle}>
+                     {item.title}
+                  </h4>
+               </button>
                <div
                   className={`${s.cardBody} ${
                      visibleIndices[index] ? s.visible : ""

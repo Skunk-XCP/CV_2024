@@ -28,8 +28,15 @@ const SkillSet = () => {
    }, [activeIndex]);
 
    return (
-      <section id="skillset" className={s.container}>
-         <h2 className={s.title}>Skillset</h2>
+      <section
+         id="skillset"
+         className={s.container}
+         aria-labelledby="skillset-title"
+      >
+         {" "}
+         <h2 id="skillset-title" className={s.title}>
+            Skillset
+         </h2>
          <Swiper
             className="swiper_container"
             effect={"coverflow"}
@@ -58,16 +65,23 @@ const SkillSet = () => {
                </SwiperSlide>
             ))}
             <div className="slider-controler">
-               <div className="swiper-button-prev slider-arrow">
+               <button
+                  className="swiper-button-prev slider-arrow"
+                  aria-label="Previous slide"
+               >
+                  {" "}
                   <ion-icon name="arrow-back-outline"></ion-icon>
-               </div>
-               <div className="swiper-button-next slider-arrow">
+               </button>
+               <button
+                  className="swiper-button-next slider-arrow"
+                  aria-label="Next slide"
+               >
+                  {" "}
                   <ion-icon name="arrow-forward-outline"></ion-icon>
-               </div>
+               </button>
                <div className="swiper-pagination"></div>
             </div>
          </Swiper>
-
          {currentText && (
             <div className={s.description}>
                <p>{currentText}</p>

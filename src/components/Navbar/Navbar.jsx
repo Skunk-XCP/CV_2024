@@ -34,6 +34,8 @@ function Navbar() {
          <div
             className={`${s.menu_burger} ${isActive ? s.active : ""}`}
             onClick={toggleMenu}
+            role="button"
+            aria-label={isActive ? "Close menu" : "Open menu"}
          >
             <div></div>
             <div></div>

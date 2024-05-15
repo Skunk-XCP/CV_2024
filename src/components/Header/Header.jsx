@@ -60,6 +60,7 @@ function Header() {
                               : "none",
                         marginRight: letter === " " ? "20px" : "0",
                      }}
+                     role="presentation"
                   >
                      <span className={s.letter}>{letter}</span>
                      <span
@@ -86,6 +87,7 @@ function Header() {
                               : "none",
                         marginRight: letter === " " ? "20px" : "0",
                      }}
+                     role="presentation"
                   >
                      <span className={s.letter}>{letter}</span>
                      <span

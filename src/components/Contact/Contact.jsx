@@ -56,13 +56,20 @@ function Contact() {
    }, [controls, animationPlayed]);
 
    return (
-      <section ref={rootRef} id="contact" className={s.section}>
+      <section
+         ref={rootRef}
+         id="contact"
+         className={s.section}
+         aria-labelledby="contact-title"
+      >
          <div className={s.title_container}>
-            <h3 className={s.title}>Let's Connect</h3>
+            <h3 id="contact-title" className={s.title}>
+               Let's Connect
+            </h3>
          </div>
 
          <div className={s.mail_container}>
-            <a className={s.email} href="donatien.rouzeirol@gmail.com">
+            <a className={s.email} href="mailto:donatien.rouzeirol@gmail.com">
                donatien.rouzeirol@gmail.com
             </a>
          </div>
@@ -76,7 +83,12 @@ function Contact() {
                   custom={index}
                   animate={controls}
                >
-                  <a href={media.url} target="_blank" rel="noopener noreferrer">
+                  <a
+                     href={media.url}
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     aria-label={media.name}
+                  >
                      <img
                         src={media.logo}
                         alt={media.name}
