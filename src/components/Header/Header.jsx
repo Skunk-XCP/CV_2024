@@ -1,24 +1,28 @@
+import { formatInTimeZone } from "date-fns-tz";
+
 import React, { useEffect, useState } from "react";
 import s from "./style.module.css";
+
+const updateTime = (timeZone) => {
+   const date = new Date();
+   const formattedDate = formatInTimeZone(date, timeZone, "HH:mm");
+   return formattedDate;
+};
 
 function Header() {
    const [hoveredTitleIndex, setHoveredTitleIndex] = useState(-1);
    const [hoveredSubtitleIndex, setHoveredSubtitleIndex] = useState(-1);
 
-   // Fonction pour mettre à jour l'heure
-   const updateTime = () => {
-      const date = new Date();
-      const hours = date.getHours();
-      const minutes = date.getMinutes();
-      return `${hours}:${minutes < 10 ? "0" + minutes : minutes}`;
-   };
-
-   const [time, setTime] = useState(updateTime());
+   const [time, setTime] = useState(updateTime("Europe/Paris"));
 
    // Mettre à jour l'heure toutes les secondes
-   setInterval(() => {
-      setTime(updateTime());
-   }, 1000);
+   useEffect(() => {
+      const intervalId = setInterval(() => {
+         setTime(updateTime("Europe/Paris"));
+      }, 1000);
+
+      return () => clearInterval(intervalId);
+   }, []);
 
    const headerTitle = "Donatien Rouzeirol";
    const letters = headerTitle.split("");
