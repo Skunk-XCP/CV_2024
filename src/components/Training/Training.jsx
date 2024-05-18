@@ -35,7 +35,7 @@ function Training() {
 
    return (
       <section id="training" className={s.container}>
-         <h3 className={s.title}>Formations</h3>
+         <h3 className={s.title}>Formation</h3>
 
          {training.map((item, index) => (
             <div

@@ -233,7 +233,7 @@
    }
 }
 
-@media only screen and (min-width: 383px) and (max-width: 480px) {
+@media only screen and (min-width: 380px) and (max-width: 480px) {
    .header_title {
       top: 60%;
    }
@@ -243,21 +243,31 @@
    }
 
    .title_letter {
-      font-size: 3rem;
+      font-size: 2.5rem;
    }
 
    .title_reflection {
-      font-size: 3rem !important;
-      transform: translateY(-20px) scaleY(-1) !important;
+      font-size: 2.5rem !important;
+      transform: translateY(-14px) scaleY(-1) !important;
    }
 
    .subtitle_letter {
-      font-size: 3rem;
+      font-size: 2.5rem;
    }
 
    .subtitle_reflection {
-      font-size: 3rem !important;
-      transform: translateY(-20px) scaleY(-1) !important;
+      font-size: 2.5rem !important;
+      transform: translateY(-14px) scaleY(-1) !important;
+   }
+
+   .work_container {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -70%);
+   }
+
+   .work_container p {
+      font-size: 1.6rem;
    }
 
    .container_time {
