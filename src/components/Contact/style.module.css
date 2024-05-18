@@ -128,16 +128,19 @@
    }
 
    .title {
-      font-size: 3rem;
+      /* font-size: 3rem; */
+      font-size: 8vw;
    }
 
    .social_media_container {
-      flex-direction: column;
+      flex-direction: column !important;
    }
 
    .social_media_card {
-      width: 15rem;
-      height: 15rem;
+      /* width: 15rem; */
+      width: 40vw;
+      /* height: 15rem; */
+      height: 40vw;
    }
 
    .mail_container {

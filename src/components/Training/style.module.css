@@ -183,7 +183,8 @@
    .trainingDate,
    .trainingDescription,
    .trainingCertificate {
-      font-size: 1.4rem;
+      /* font-size: 1.4rem; */
+      font-size: 3.5vw;
    }
 
    .card {
