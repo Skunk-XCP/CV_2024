@@ -248,7 +248,8 @@
    }
 
    .title_reflection {
-      font-size: 2.5rem !important;
+      /* font-size: 2.5rem !important; */
+      font-size: 7vw !important;
       transform: translateY(-16px) scaleY(-1) !important;
    }
 
@@ -258,7 +259,8 @@
    }
 
    .subtitle_reflection {
-      font-size: 2.5rem !important;
+      /* font-size: 2.5rem !important; */
+      font-size: 7vw !important;
       transform: translateY(-16px) scaleY(-1) !important;
    }
 
