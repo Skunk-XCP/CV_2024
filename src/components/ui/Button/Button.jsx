@@ -10,19 +10,20 @@ const Button = ({
   rel,
   type = "button",
   className = "",
+  ...rest
 }) => {
   const classes = `${styles.button} ${styles[variant]} ${styles[size]} ${className}`.trim();
 
   if (href) {
     return (
-      <a className={classes} href={href} target={target} rel={rel}>
+      <a className={classes} href={href} target={target} rel={rel} {...rest}>
         {children}
       </a>
     );
   }
 
   return (
-    <button className={classes} type={type}>
+    <button className={classes} type={type} {...rest}>
       {children}
     </button>
   );
