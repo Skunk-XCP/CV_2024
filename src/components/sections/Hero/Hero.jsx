@@ -30,7 +30,7 @@ const Hero = () => {
         <div className={styles.media}>
           <img
             src="/assets/images/cafe-cosy.png"
-            alt="Ambiance caf� cozy"
+            alt="Ambiance café cozy"
             className={styles.heroImage}
             loading="eager"
             decoding="async"

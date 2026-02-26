@@ -19,7 +19,7 @@ export const estimatePricing = ({ businessType, siteType }) => {
       rangeMax: null,
       timeline: "Sur devis",
       includedBullets: fallbackIncluded,
-      notes: "Combinaison spÃ©cifique Ã  cadrer ensemble."
+      notes: "Combinaison spécifique à cadrer ensemble."
     };
   }
 

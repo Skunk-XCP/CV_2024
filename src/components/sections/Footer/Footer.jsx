@@ -24,7 +24,7 @@ const Footer = () => {
                 className={isLinkedIn ? styles.linkedinButton : ""}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`${social.label} (nouvelle fenetre)`}
+                aria-label={`${social.label} (nouvelle fenêtre)`}
               >
                 {social.label}
               </Button>

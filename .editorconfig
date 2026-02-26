@@ -1,0 +1,11 @@
+root = true
+
+[*.{js,jsx,ts,tsx,mjs,cjs,css,html,json,md,txt,xml,svg,yml,yaml}]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 2
+
+[*.{png,jpg,jpeg,gif,webp,ico,woff,woff2}]
+charset = unset
