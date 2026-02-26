@@ -29,8 +29,8 @@ const Hero = () => {
         </div>
         <div className={styles.media}>
           <img
-            src="/assets/images/cfe-cosy.webp"
-            alt="Ambiance café cozy"
+            src="/assets/images/cafe-cosy.webp"
+            alt="Ambiance cafÃ© cozy"
             className={styles.heroImage}
             loading="eager"
             decoding="async"
