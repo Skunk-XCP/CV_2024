@@ -1,5 +1,6 @@
-﻿.footer {
+.footer {
   padding: 3rem 0 4rem;
+  background: var(--accent-soft);
 }
 
 .inner {
@@ -36,3 +37,13 @@
     justify-content: center;
   }
 }
+
+
+.linkedinButton {
+  background: #ffffff;
+}
+
+.linkedinButton:hover {
+  background: #ffffff;
+}
+

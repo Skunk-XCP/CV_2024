@@ -8,7 +8,11 @@ const Navbar = () => {
     <header className={styles.navbar}>
       <Container className={styles.inner}>
         <div className={styles.brand}>
-          <span className={styles.logo} aria-hidden="true">FN</span>
+          <img
+            className={styles.logo}
+            src={`${process.env.PUBLIC_URL}/assets/images/DR-favicon.png`}
+            alt="Logo Donatien Rouzeirol"
+          />
           <div>
             <p className={styles.name}>{brand.name}</p>
             <p className={styles.role}>{brand.role}</p>
@@ -32,3 +36,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
