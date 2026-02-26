@@ -2,6 +2,12 @@ import { hero } from "../../../data";
 import { Badge, Button, Container } from "../../ui";
 import styles from "./Hero.module.css";
 
+const HERO_IMAGE_SRCSET_WEBP =
+  "/assets/images/cafe-cosy-480.webp 480w, /assets/images/cafe-cosy-800.webp 800w, /assets/images/cafe-cosy-1200.webp 1200w";
+const HERO_IMAGE_SRCSET_AVIF =
+  "/assets/images/cafe-cosy-480.avif 480w, /assets/images/cafe-cosy-800.avif 800w, /assets/images/cafe-cosy-1200.avif 1200w";
+const HERO_IMAGE_SIZES = "(max-width: 768px) 90vw, 520px";
+
 const Hero = () => {
   return (
     <section className={styles.hero}>
@@ -28,13 +34,22 @@ const Hero = () => {
           </div>
         </div>
         <div className={styles.media}>
-          <img
-            src="/assets/images/cafe-cosy.webp"
-            alt="Ambiance cafÃ© cozy"
-            className={styles.heroImage}
-            loading="eager"
-            decoding="async"
-          />
+          <picture>
+            <source type="image/avif" srcSet={HERO_IMAGE_SRCSET_AVIF} sizes={HERO_IMAGE_SIZES} />
+            <source type="image/webp" srcSet={HERO_IMAGE_SRCSET_WEBP} sizes={HERO_IMAGE_SIZES} />
+            <img
+              src="/assets/images/cafe-cosy-800.webp"
+              srcSet={HERO_IMAGE_SRCSET_WEBP}
+              sizes={HERO_IMAGE_SIZES}
+              width="800"
+              height="574"
+              alt="Ambiance cafe cozy"
+              className={styles.heroImage}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+            />
+          </picture>
         </div>
       </Container>
     </section>
