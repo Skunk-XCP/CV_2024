@@ -1,4 +1,5 @@
-# https://www.robotstxt.org/robotstxt.html
+﻿# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
-Sitemap: https://votre-domaine.com/sitemap.xml
+Sitemap: https://donatien-rouzeirol.fr/sitemap.xml
+
