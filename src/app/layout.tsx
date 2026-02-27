@@ -70,8 +70,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="preload"
           as="image"
           href="/assets/images/cafe-cosy-800.webp"
-          imagesrcset="/assets/images/cafe-cosy-480.webp 480w, /assets/images/cafe-cosy-800.webp 800w, /assets/images/cafe-cosy-1200.webp 1200w"
-          imagesizes="(max-width: 768px) 90vw, 520px"
+          imageSrcSet="/assets/images/cafe-cosy-480.webp 480w, /assets/images/cafe-cosy-800.webp 800w, /assets/images/cafe-cosy-1200.webp 1200w"
+          imageSizes="(max-width: 768px) 90vw, 520px"
         />
         <meta name="geo.region" content="FR-NAQ" />
         <meta name="geo.placename" content="Bordeaux" />
@@ -79,4 +79,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>{children}</body>
     </html>
   );
-}
+}
+
