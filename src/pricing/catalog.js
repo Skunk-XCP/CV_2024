@@ -84,8 +84,8 @@ export const pricingMatrix = {
     },
     backend: {
       fromPrice: null,
-      range: null,
-      timeline: "Sur devis",
+      range: [2800, 5200],
+      timeline: "3–6 semaines",
       included: [
         "Rarement nécessaire pour un cabinet",
         "Si besoin : admin simple pour modifier contenus non sensibles",
