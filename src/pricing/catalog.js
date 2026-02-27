@@ -1,6 +1,7 @@
 export const businessTypes = [
   { id: "snack", label: "Restauration rapide / snack" },
   { id: "restaurant", label: "Restaurant indépendant" },
+  { id: "medical", label: "Santé (cabinet / dentaire / paramédical)" },
   { id: "gastro", label: "Gastronomique / haut de gamme" },
   { id: "artisan", label: "Artisan (BTP / services)" },
   { id: "salon", label: "Salon (coiffure / esthétique)" },
@@ -32,7 +33,7 @@ export const pricingMatrix = {
       range: [2200, 3800],
       timeline: "2–4 semaines",
       included: [
-        "Tout le vitrine + base de données",
+        "Tout le site vitrine + base de données",
         "Gestion simple du menu (admin)",
         "Demandes / messages stockés + statuts",
         "Notifications email + export basique"
@@ -59,12 +60,39 @@ export const pricingMatrix = {
       range: [3200, 6000],
       timeline: "3–6 semaines",
       included: [
-        "Tout le vitrine + base de données",
-        "Gestion du menu (admin) OU demandes/résas simples",
+        "Tout le site vitrine + base de données",
+        "Gestion du menu (admin) OU demandes/réservations simples",
         "Emails transactionnels (confirmation/reçu)",
         "Back-office léger + logs/exports basiques"
       ],
-      notes: "1–2 fonctionnalités backend max (pas une plateforme de résa complète)."
+      notes: "1–2 fonctionnalités backend max (pas une plateforme de réservation complète)."
+    }
+  },
+
+  medical: {
+    vitrine: {
+      fromPrice: 1600,
+      range: [1600, 3200],
+      timeline: "2–3 semaines",
+      included: [
+        "4–6 pages (Cabinet/Équipe, Actes/Prestations, Infos pratiques, Contact)",
+        "CTA prise de RDV (Doctolib/Maiia) + itinéraire Google Maps",
+        "Infos essentielles : horaires, accès, urgences, documents à apporter",
+        "SEO local de base + performance + mise en ligne"
+      ],
+      notes: "Site vitrine informatif + redirection RDV (pas de collecte de données de santé)."
+    },
+    backend: {
+      fromPrice: null,
+      range: null,
+      timeline: "Sur devis",
+      included: [
+        "Rarement nécessaire pour un cabinet",
+        "Si besoin : admin simple pour modifier contenus non sensibles",
+        "Pas de stockage d'informations médicales / patients",
+        "Périmètre défini au cadrage"
+      ],
+      notes: "Optionnel. Le plus courant : vitrine + lien RDV externe."
     }
   },
 
@@ -86,7 +114,7 @@ export const pricingMatrix = {
       range: [6000, 12000],
       timeline: "6–10 semaines",
       included: [
-        "Tout le vitrine premium + base de données",
+        "Tout le site vitrine premium + base de données",
         "Admin contenu (menu/actus) + formulaires avancés",
         "Emails transactionnels + anti-spam + monitoring léger",
         "Intégrations (réservation externe, newsletter, etc.)"
@@ -113,7 +141,7 @@ export const pricingMatrix = {
       range: [2800, 5200],
       timeline: "3–6 semaines",
       included: [
-        "Tout le vitrine + base de données",
+        "Tout le site vitrine + base de données",
         "Demandes de devis stockées + statuts + notes",
         "Back-office léger (liste, détail, export)",
         "Notifications email + anti-spam"
@@ -140,7 +168,7 @@ export const pricingMatrix = {
       range: [2600, 5000],
       timeline: "3–6 semaines",
       included: [
-        "Tout le vitrine + base de données",
+        "Tout le site vitrine + base de données",
         "Demandes stockées + back-office léger",
         "Gestion simple contenus (prestations/tarifs) en admin",
         "Emails auto + export basique"
@@ -167,12 +195,12 @@ export const pricingMatrix = {
       range: [2200, 4200],
       timeline: "3–6 semaines",
       included: [
-        "Tout le vitrine + base de données",
+        "Tout le site vitrine + base de données",
         "Formulaire avancé (qualif) + stockage + statuts",
         "Espace admin léger (leads, notes, export)",
         "Emails transactionnels + anti-spam"
       ],
-      notes: "Backend utile si tu veux suivre les leads proprement."
+      notes: "Backend utile si vous voulez suivre les leads proprement."
     }
   },
 
@@ -194,7 +222,7 @@ export const pricingMatrix = {
       range: [3500, 8000],
       timeline: "4–8 semaines",
       included: [
-        "Tout le vitrine + base de données",
+        "Tout le site vitrine + base de données",
         "Back-office léger (contenus ou demandes) + rôles simples",
         "Emails transactionnels + logs/exports",
         "Intégrations (newsletter, CRM léger, etc.)"

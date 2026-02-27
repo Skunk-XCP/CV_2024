@@ -23,10 +23,13 @@ export const estimatePricing = ({ businessType, siteType }) => {
     };
   }
 
+  const rangeMin = Array.isArray(matrixEntry.range) ? matrixEntry.range[0] : null;
+  const rangeMax = Array.isArray(matrixEntry.range) ? matrixEntry.range[1] : null;
+
   return {
-    fromPrice: matrixEntry.fromPrice,
-    rangeMin: matrixEntry.range?.[0] ?? null,
-    rangeMax: matrixEntry.range?.[1] ?? null,
+    fromPrice: typeof matrixEntry.fromPrice === "number" ? matrixEntry.fromPrice : null,
+    rangeMin,
+    rangeMax,
     timeline: matrixEntry.timeline,
     includedBullets: matrixEntry.included,
     notes: matrixEntry.notes
