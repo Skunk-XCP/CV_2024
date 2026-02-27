@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+
+export const viewport = {
+  themeColor: "#0f1115"
+};
+
 export const metadata: Metadata = {
   title: "Donatien Rouzeirol | D�veloppeur web",
   description:
@@ -43,7 +48,6 @@ export const metadata: Metadata = {
     description: "Sites web premium, rapides et optimis�s SEO � Bordeaux.",
     images: ["/assets/images/cafe-cosy-800.webp"]
   },
-  themeColor: "#0f1115",
   other: {
     "geo.region": "FR-NAQ",
     "geo.placename": "Bordeaux"
