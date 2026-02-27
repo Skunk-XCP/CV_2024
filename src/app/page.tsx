@@ -1,7 +1,6 @@
-import React from "react";
-import { Navbar, Hero, Services, ValueProps, Process, Pricing, CTA, Footer } from "./components/sections";
+import { Navbar, Hero, Services, ValueProps, Process, Pricing, CTA, Footer } from "@/components/sections";
 
-function App() {
+export default function HomePage() {
   return (
     <div className="app">
       <a className="skipLink" href="#main">
@@ -20,5 +19,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useRef, useState } from "react";
 import { Container, Button } from "../../ui";
 import { brand, nav } from "../../../data";
@@ -64,7 +66,7 @@ const Navbar = () => {
         <div className={styles.brand}>
           <img
             className={styles.logo}
-            src={`${process.env.PUBLIC_URL}/assets/images/DR-favicon.png`}
+            src="/assets/images/DR-favicon.png"
             alt="Logo Donatien Rouzeirol"
           />
           <div className={styles.brandMeta}>
